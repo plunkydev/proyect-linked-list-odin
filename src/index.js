@@ -8,29 +8,41 @@ class Node {
 }
 
 class LinkedList {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.size = 0;
-  }
-
+  #size = 0;
+  #head = null;
+  #tail = null;
   append(value) {
     const newNode = new Node(value);
-    if (this.head === null) {
-      this.head = newNode;
-      this.tail = newNode;
+    if (this.#head === null) {
+      this.#head = newNode;
+      this.#tail = newNode;
     } else {
-      let current = this.head;
-      let father = current;
-      while (current) {
-        father = current;
-        current = current.nextNode;
-      }
-      current = newNode;
-      father.nextNode = current;
-      this.tail = newNode;
+      this.#tail.nextNode = newNode;
+      this.#tail = newNode;
     }
-    this.size++;
+    this.#size++;
+  }
+
+  prepend(value) {
+    const newNode = new Node(value);
+    newNode.nextNode = this.#head;
+    this.#head = newNode;
+    if (this.#tail === null) {
+      this.#tail = newNode;
+    }
+    this.#size++;
+  }
+
+  get size() {
+    return this.#size;
+  }
+
+  get head() {
+    return this.#head;
+  }
+
+  get tail() {
+    return this.#tail;
   }
 }
 
@@ -41,5 +53,8 @@ list.append('parrot');
 list.append('hamster');
 list.append('snake');
 list.append('turtle');
+list.prepend('horse');
 
-console.log(list);
+console.log(list.size);
+console.log(list.head);
+console.log(list.tail);
