@@ -9,11 +9,13 @@
 3. Desarrolla tu proyecto en tu nuevo repositorio
 
 ## ❌ NO hagas:
+
 - Fork de este repositorio para desarrollo
 - Pull Requests con cambios a tu proyecto
 - Issues sobre tu código específico
 
 ## ✅ SÍ puedes hacer:
+
 - Issues sobre problemas de la plantilla base
 - Sugerencias de mejora para la plantilla
 - Reportar bugs en la configuración de webpack/babel

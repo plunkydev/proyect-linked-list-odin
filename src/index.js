@@ -1,5 +1,5 @@
 import './styles.css';
 
-console.log('🚀 Plantilla Webpack lista para usar!');
+console.log('proyect-linked-list-odin');
 
 // Tu código aquí...
